@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+func BubbleSort(v []int) {
+    for i := 0; i < len(v)-1; i++ {
+        trocou := false
+        for j := 0; j < len(v)-i-1; j++ {
+            if v[j] > v[j+1] {
+                v[j], v[j+1] = v[j+1], v[j]
+                trocou = true
+            }
+        }
+        if !trocou {
+            return
+        }
+    }
+}
+
+func main() {
+    // Cria um slice desordenado
+    vetor := []int{64, 34, 25, 12, 22, 11, 90}
+
+    fmt.Println("Vetor original:", vetor)
+
+    BubbleSort(vetor)
+
+    fmt.Println("Vetor ordenado:", vetor)
+}
